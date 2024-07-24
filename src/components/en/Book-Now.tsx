@@ -1,84 +1,90 @@
+'use client'
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { z } from "zod";
+import Link from "next/link";
 
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover"
-import { Button } from "@/components/ui/button"
-import { Calendar } from "@/components/ui/calendar"
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
+// Define the schema using Zod
+const appointmentSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  phone: z.string().regex(/^\d{10}$/, "Phone must be 10 digits"),
+  email: z.string().email("Invalid email address"),
+  address: z.string().min(1, "Address is required"),
+});
+
+// Define the types for form data and errors
+type FormData = z.infer<typeof appointmentSchema>;
+type Errors = Partial<Record<keyof FormData, { _errors: string[] }>>;
 
 export default function BookNow() {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    email: "",
+    address: "",
+  });
+
+  const [errors, setErrors] = useState<Errors>({});
+
+  // Define the type for the change event
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  // Define the type for the submit event
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const validation = appointmentSchema.safeParse(formData);
+    if (!validation.success) {
+      const errorMessages = validation.error.format();
+      setErrors(errorMessages);
+    } else {
+      setErrors({});
+      // Handle successful form submission
+      console.log("Form data is valid:", validation.data);
+    }
+  };
+
   return (
-    <Card className="max-w-md mx-auto ">
+    <Card className="max-w-md mx-auto">
       <CardHeader>
         <CardTitle>Book Your Appointment</CardTitle>
         <CardDescription>Select a date and time to schedule your appointment.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form className="grid gap-4">
-          <div className="grid grid-cols-2 gap-4">
-            {/* <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="flex-col items-start w-full h-auto">
-                  <span className="font-semibold uppercase text-[0.65rem]">Date</span>
-                  <span className="font-normal">Select a date</span>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="p-0 max-w-[276px]">
-                <Calendar />
-              </PopoverContent>
-            </Popover>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="flex-col items-start w-full h-auto ">
-                  <span className="font-semibold uppercase text-[0.65rem]">Time</span>
-                  <span className="font-normal">Select a time</span>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="p-0 max-w-[276px]">
-                <div className="grid grid-cols-3 gap-2 p-4">
-                  <Button variant="ghost" size="sm">
-                    9:00 AM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    10:00 AM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    11:00 AM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    1:00 PM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    2:00 PM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    3:00 PM
-                  </Button>
-                </div>
-              </PopoverContent>
-            </Popover> */}
-          </div>
+        <form className="grid gap-4" onSubmit={handleSubmit}>
           <div>
             <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Enter your name" />
+            <Input id="name" placeholder="Enter your name" value={formData.name} onChange={handleChange} />
+            {errors.name && <p className="text-red-500 text-xs py-2">{errors.name._errors[0]}</p>}
           </div>
           <div>
             <Label htmlFor="phone">Phone</Label>
-            <Input id="phone" type="tel" placeholder="Enter your phone number" />
+            <Input id="phone" type="tel" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} />
+            {errors.phone && <p className="text-red-500 text-xs py-2">{errors.phone._errors[0]}</p>}
           </div>
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="Enter your email" />
+            <Input id="email" type="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} />
+            {errors.email && <p className="text-red-500 text-xs py-2">{errors.email._errors[0]}</p>}
           </div>
           <div>
             <Label htmlFor="address">Address</Label>
-            <Input id="address" type="address" placeholder="Enter your Address" />
+            <Input id="address" placeholder="Enter your Address" value={formData.address} onChange={handleChange} />
+            {errors.address && <p className="text-red-500 text-xs py-2">{errors.address._errors[0]}</p>}
           </div>
+          <Link href={'/success'}>
           <Button type="submit" className="w-full rounded-full bg-[#065D98] hover:bg-[#56BA40]">
             Book Appointment
           </Button>
+          </Link>
+        
         </form>
       </CardContent>
     </Card>
-  )
+  );
 }
+
