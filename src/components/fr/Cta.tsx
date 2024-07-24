@@ -9,7 +9,7 @@ export default function Cta() {
           Demander un devis
           </h2>
           <p className="max-w-[1000px] text-white md:text-xl/relaxed lg:text-lg/relaxed">
-          Prêt à expérimenter la différence Entretien VH Pro? Contactez-nous dès aujourd'hui pour demander un devis. Notre équipe travaillera avec vous pour comprendre vos besoins de nettoyage et vous fournira un devis détaillé et sans engagement. Que vous ayez besoin d'un service ponctuel ou d'un plan de nettoyage récurrent, nous sommes là pour vous aider.
+          Prêt à expérimenter la différence Entretien VH Pro? Contactez-nous dès aujourd`&lsquo;`hui pour demander un devis. Notre équipe travaillera avec vous pour comprendre vos besoins de nettoyage et vous fournira un devis détaillé et sans engagement. Que vous ayez besoin d`&lsquo;`un service ponctuel ou d`&lsquo;`un plan de nettoyage récurrent, nous sommes là pour vous aider.
           </p>
         </div>
         <Link

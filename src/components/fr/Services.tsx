@@ -100,7 +100,7 @@ export default function Services() {
             </h2>
             <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Nous proposons une large gamme de services pour aider votre entreprise à réussir.
-            Du nettoyage des surfaces à l’élimination des graffitis, nous avons ce qu’il vous faut.
+            Du nettoyage des surfaces à l`&lsquo;`élimination des graffitis, nous avons ce qu`&lsquo;`il vous faut.
             </p>
           </div>
           <div className="flex space-x-4">

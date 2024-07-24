@@ -46,7 +46,7 @@ export default function HowItWorks() {
           Comment ça fonctionne
           </h2>
           <p className="mx-auto max-w-[700px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-          Notre plateforme facilite la création et le déploiement d'applications Web.
+          Notre plateforme facilite la création et le déploiement d`&lsquo;`applications Web.
           Voici comment cela fonctionne.
           </p>
         </div>

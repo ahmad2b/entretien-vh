@@ -32,7 +32,7 @@ export default function Testimonials() {
             </h2>
             <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               Écoutez les entreprises que nous avons aidées à transformer leur propreté
-              et l'entretien.
+              et l`&lsquo;`entretien.
             </p>
           </div>
           <div className="divide-y rounded-lg border">

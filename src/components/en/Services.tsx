@@ -100,7 +100,7 @@ export default function Services() {
             </h2>
             <p className="max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               We offer a wide range of services to help your business succeed.
-              From surface cleaning to graffiti removal, we've got you covered.
+              From surface cleaning to graffiti removal, we`&lsquo;`ve got you covered.
             </p>
           </div>
           <div className="flex space-x-4">
