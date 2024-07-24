@@ -34,7 +34,7 @@ export default function Navbar() {
           Commentaires
         </Link>
         <Link
-          href="#"
+          href="/book-now"
           className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white"
           prefetch={false}
         >
