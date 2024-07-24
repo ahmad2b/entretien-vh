@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const testimonials = [
   {
     image: "/avatar-1.jpg",
@@ -40,7 +42,7 @@ export default function Testimonials() {
                   key={index}
                   className="mx-auto flex w-full flex-col items-center justify-center space-y-4 p-8"
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     width="64"
                     height="64"

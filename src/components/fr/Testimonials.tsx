@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const testimonials = [
@@ -42,7 +43,7 @@ export default function Testimonials() {
                   key={index}
                   className="mx-auto flex w-full flex-col items-center justify-center p-8 space-y-4"
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     width="64"
                     height="64"
