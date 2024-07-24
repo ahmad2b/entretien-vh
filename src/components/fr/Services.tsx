@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
+import { useRouter } from 'next/navigation';
 
 const services = [
   {
@@ -82,6 +83,13 @@ const specialService = {
 };
 
 export default function Services() {
+
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    router.push('/book-now');
+  };
+
   const params = useParams();
   const [selectedCategory, setSelectedCategory] = useState("Nettoyage intérieur");
 
@@ -138,7 +146,9 @@ export default function Services() {
               </div>
               <h3 className="text-xl font-semibold">{service.title}</h3>
               <p className="text-muted-foreground">{service.description}</p>
-              <Button className="rounded-full bg-[#065D98] hover:bg-[#56BA40]">
+              <Button className="rounded-full bg-[#065D98] hover:bg-[#56BA40]"
+                      onClick={handleButtonClick}
+>
               Reserve maintenant
               </Button>
             </div>

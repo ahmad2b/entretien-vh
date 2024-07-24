@@ -1,4 +1,7 @@
+'use client'
+
 import { Calculator, Clock, Handshake } from "lucide-react";
+import { useRouter } from 'next/navigation';
 
 import { Button } from "@/components/ui/button";
 
@@ -39,6 +42,12 @@ const steps = [
 ];
 
 export default function HowItWorks() {
+
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    router.push('/book-now');
+  };
   return (
     <section className="w-full bg-[#065D98] py-20 md:py-24 lg:py-32">
       <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
@@ -66,7 +75,8 @@ export default function HowItWorks() {
               <p className="text-xs text-muted-foreground md:text-sm">
                 {step.description}
               </p>
-              <Button variant="outline" className="mt-4">
+              <Button variant="outline" className="mt-4"
+               onClick={handleButtonClick}>
                 {step.button}
               </Button>
             </div>
