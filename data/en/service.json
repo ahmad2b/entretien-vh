@@ -1,0 +1,36 @@
+{
+  "title": "Our Services",
+  "description": "Discover our comprehensive range of services tailored to meet your business needs and drive your success in the digital landscape.",
+  "items": [
+    {
+      "title": "Multi Surface Cleaning",
+      "description": "Clean faster, not harder. Our attachment blasts away grime with even water flow & HOT water (up to 85°C).",
+      "header": "Skeleton",
+      "icon": "IconRipple"
+    },
+    {
+      "title": "Truck & Fleet Cleaning",
+      "description": "Deep clean for winter warriors! Our wash program blasts dirt with hot water (up to 85°C) for a sparkling finish. Plus, it protects against winter salt and grime.",
+      "header": "Skeleton",
+      "icon": "IconTruck"
+    },
+    {
+      "title": "Graffiti Removal",
+      "description": "Is graffiti tarnishing the look of your property? We ensure your area is free from vandalism and provides a rejuvenation of damaged areas.",
+      "header": "Skeleton",
+      "icon": "IconSpray"
+    },
+    {
+      "title": "Heavy Machinery Cleaning",
+      "description": "Advanced techniques remove stubborn grime, oil, and dirt, ensuring optimal functionality and a pristine appearance. Trust us to rejuvenate your machinery.",
+      "header": "Skeleton",
+      "icon": "IconBulldozer"
+    },
+    {
+      "title": "Dumpster Pads",
+      "description": "Enhance your property's cleanliness with our eco-friendly dumpster pad cleaning service. We effectively remove grime and odors for a pristine environment.",
+      "header": "Skeleton",
+      "icon": "IconTrash"
+    }
+  ]
+}

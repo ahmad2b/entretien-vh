@@ -1,0 +1,53 @@
+{
+  "PrivacyPolicy": {
+    "Introduction": {
+      "Company": "Entretien Pro",
+      "Description": "Offre des services de nettoyage à haute pression, y compris le nettoyage de surfaces, le nettoyage de flottes et l'élimination de graffitis",
+      "Purpose": "Explique les pratiques concernant la collecte, l'utilisation et la divulgation des informations personnelles des utilisateurs"
+    },
+    "InformationCollection": {
+      "PersonalInformation": "Noms, adresses, adresses électroniques, numéros de téléphone, informations identifiables",
+      "NonPersonalInformation": "Préférences de service, retours d'expérience, autres informations connexes",
+      "MethodsOfCollection": "Formulaires de demande de service, communications directes, interactions sur le site web"
+    },
+    "UseOfInformation": {
+      "Purpose": [
+        "Fournir et améliorer les services",
+        "Répondre aux demandes de renseignements et aux demandes de service",
+        "Améliorer l'expérience client",
+        "Informer sur les mises à jour des services et les offres"
+      ]
+    },
+    "InformationSharingAndDisclosure": {
+      "SharingWith": "Partenaires de service, sous-traitants, autorités légales lorsque requis",
+      "SecurityMeasures": "Mesures prises pour garantir la confidentialité et la sécurité des informations partagées"
+    },
+    "DataSecurity": {
+      "Commitment": "Protection des informations contre l'accès non autorisé, l'altération, la destruction ou la divulgation",
+      "SecurityMeasures": "Pratiques appropriées de collecte, de stockage et de traitement des données"
+    },
+    "RightsOfIndividuals": {
+      "Rights": [
+        "Accès et mise à jour des informations personnelles",
+        "Demande de suppression des informations personnelles",
+        "Opter pour la non-utilisation de certaines informations"
+      ]
+    },
+    "PolicyUpdates": {
+      "UpdateProcedure": "Notification des changements par publication sur le site web",
+      "EffectiveDate": "Les changements prennent effet dès leur publication"
+    },
+    "ContactInformation": {
+      "ContactDetails": "[Insérer les informations de contact]"
+    },
+    "JurisdictionAndCompliance": {
+      "GoverningLaw": "Droit canadien",
+      "Compliance": "Conforme aux lois et réglementations canadiennes pertinentes en matière de confidentialité"
+    },
+    "AdditionalClauses": {
+      "InternationalDataTransfer": "Les informations peuvent être transférées et traitées en dehors du pays de résidence",
+      "CookiePolicy": "Utilisation de cookies sur le site web, avec options de désinscription"
+    },
+    "EffectiveDate": "13 novembre 2023"
+  }
+}

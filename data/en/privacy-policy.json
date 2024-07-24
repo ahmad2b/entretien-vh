@@ -1,0 +1,53 @@
+{
+  "PrivacyPolicy": {
+    "Introduction": {
+      "Company": "Entretien Pro",
+      "Description": "Operates pressure washer services including surface cleaning, fleet cleaning, and graffiti removal",
+      "Purpose": "Explains practices regarding the collection, use, and disclosure of personal information from users"
+    },
+    "InformationCollection": {
+      "PersonalInformation": "Names, addresses, email addresses, telephone numbers, identifiable information",
+      "NonPersonalInformation": "Service preferences, feedback, other related information",
+      "MethodsOfCollection": "Service request forms, direct communications, website interactions"
+    },
+    "UseOfInformation": {
+      "Purpose": [
+        "Delivering and improving services",
+        "Responding to inquiries and service requests",
+        "Enhancing customer experience",
+        "Informing about service updates and offers"
+      ]
+    },
+    "InformationSharingAndDisclosure": {
+      "SharingWith": "Service partners, subcontractors, legal authorities when required",
+      "SecurityMeasures": "Steps taken to ensure confidentiality and security of shared information"
+    },
+    "DataSecurity": {
+      "Commitment": "Protecting information from unauthorized access, alteration, destruction, or disclosure",
+      "SecurityMeasures": "Appropriate data collection, storage, and processing practices"
+    },
+    "RightsOfIndividuals": {
+      "Rights": [
+        "Access and update personal information",
+        "Request deletion of personal information",
+        "Opt-out of certain uses of information"
+      ]
+    },
+    "PolicyUpdates": {
+      "UpdateProcedure": "Notifying changes by posting on the website",
+      "EffectiveDate": "Changes effective upon posting"
+    },
+    "ContactInformation": {
+      "ContactDetails": "[Insert contact information]"
+    },
+    "JurisdictionAndCompliance": {
+      "GoverningLaw": "Canadian law",
+      "Compliance": "Complies with relevant Canadian privacy laws and regulations"
+    },
+    "AdditionalClauses": {
+      "InternationalDataTransfer": "Information may be transferred and processed outside of country of residence",
+      "CookiePolicy": "Use of cookies on website, with opt-out options"
+    },
+    "EffectiveDate": "13 November 2023"
+  }
+}

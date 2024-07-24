@@ -1,0 +1,19 @@
+{
+  "meta": {
+    "header": "Notre processus",
+    "subheader": "Notre solution de nettoyage simple en 3 étapes",
+    "description": "Nous vous facilitons la tâche pour obtenir un environnement impeccable grâce à notre processus rationalisé. Suivez ces étapes simples et nous assurerons un nettoyage en profondeur sans aucun problème."
+  },
+  "freeConsultation": {
+    "heading": "Consultation gratuite",
+    "description": "Commencez par une consultation simple, notre équipe comprend vos besoins spécifiques. Qu'il s'agisse de redonner vie à une surface, d'entretenir une flotte ou de supprimer des graffitis, nous adaptons notre approche pour répondre à vos exigences. Nos experts évaluent la tâche à accomplir en tenant compte de facteurs."
+  },
+  "customizedServicePlan": {
+    "heading": "Plan de service personnalisé",
+    "description": "Sur la base de l’évaluation initiale, nous créons un plan de service personnalisé. Ce plan décrit les techniques, les équipements et les agents de nettoyage écologiques les mieux adaptés à votre projet. Nous planifions nos services à une heure qui minimise les perturbations."
+  },
+  "executionWithExcellence": {
+    "heading": "Exécution avec excellence",
+    "description": "Nos professionnels qualifiés exécutent le service avec une attention méticuleuse aux détails. En utilisant des équipements de pointe et des pratiques respectueuses de l’environnement, nous garantissons un nettoyage en profondeur sans laisser de résidus ni de dommages."
+  }
+}

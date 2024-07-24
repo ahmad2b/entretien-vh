@@ -1,0 +1,58 @@
+{
+  "TermsAndConditions": {
+    "Introduction": {
+      "Title": "Terms and Conditions",
+      "Company": "Entretien Pro",
+      "Description": "These Terms and Conditions govern the use of pressure washer services provided by Entretien Pro, including surface cleaning, fleet cleaning, and graffiti removal."
+    },
+    "ServiceUsage": {
+      "Title": "Use of Services",
+      "Description": [
+        "Services are provided in accordance with specified terms and must not be used for any unlawful purposes.",
+        "Customers are responsible for ensuring that any information provided to Entretien Pro is accurate and complete."
+      ]
+    },
+    "PaymentAndPricing": {
+      "Title": "Payment and Pricing",
+      "Description": [
+        "Prices for services will be as quoted at the time of booking.",
+        "Payment for services must be completed in accordance with the agreed terms."
+      ]
+    },
+    "CancellationPolicy": {
+      "Title": "Cancellation Policy",
+      "Description": [
+        "Cancellations must be made within a specified period prior to the service date to avoid charges.",
+        "In the event of a late cancellation, a cancellation fee may apply."
+      ]
+    },
+    "LiabilityLimitations": {
+      "Title": "Limitations of Liability",
+      "Description": [
+        "Entretien Pro is not liable for any indirect or consequential losses due to service use.",
+        "Liability for any damages shall not exceed the amount paid for the service."
+      ]
+    },
+    "WarrantyDisclaimer": {
+      "Title": "Warranty Disclaimer",
+      "Description": "Services are provided 'as is' without any warranties, either expressed or implied, to the fullest extent permissible pursuant to applicable law."
+    },
+    "IntellectualProperty": {
+      "Title": "Intellectual Property",
+      "Description": "All intellectual property rights related to the services provided are and shall remain the property of Entretien Pro."
+    },
+    "GoverningLaw": {
+      "Title": "Governing Law",
+      "Description": "These Terms and Conditions are governed by and construed in accordance with the laws of Canada."
+    },
+    "AmendmentPolicy": {
+      "Title": "Amendment Policy",
+      "Description": "Entretien Pro reserves the right to amend these Terms and Conditions at any time. Continued use of the services following any changes signifies acceptance of those changes."
+    },
+    "ContactInformation": {
+      "Title": "Contact Information",
+      "Description": "For any questions or concerns regarding these Terms and Conditions, please email us at: entretien@vhpro.ca."
+    },
+    "EffectiveDate": "Effective Date: 13 November 2023"
+  }
+}

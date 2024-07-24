@@ -1,0 +1,48 @@
+{
+  "title": "Navigation",
+  "navigation": [
+    {
+      "id": 1,
+      "title": "Home",
+      "url": "/"
+    },
+    {
+      "id": 2,
+      "title": "Services",
+      "url": "/#services"
+    },
+    {
+      "id": 3,
+      "title": "About",
+      "url": "/about"
+    },
+    {
+      "id": 4,
+      "title": "Contact",
+      "url": "/contact"
+    }
+  ],
+  "onlyFooter": [
+    {
+      "id": 6,
+      "title": "Privacy Policy",
+      "url": "/privacy"
+    },
+    {
+      "id": 7,
+      "title": "Contact Us",
+      "url": "/contact"
+    },
+    {
+      "id": 8,
+      "title": "Terms & Conditions",
+      "url": "/terms"
+    }
+  ],
+  "contactinfo": {
+    "heading": "Contact Info",
+    "email": "entretien@vhpro.ca",
+    "phone": "5142746654"
+  },
+  "tagline": ""
+}

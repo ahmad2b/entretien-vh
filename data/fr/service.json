@@ -1,0 +1,36 @@
+{
+  "title": "Nos services",
+  "description": "Découvrez notre gamme complète de services adaptés pour répondre aux besoins de votre entreprise et favoriser votre réussite dans le paysage numérique.",
+  "items": [
+    {
+      "title": "Nettoyage multi-surfaces",
+      "description": "Nettoyez plus rapidement, pas plus fort. Notre accessoire élimine la saleté avec un débit d'eau uniforme et de l'eau CHAUDE (jusqu'à 85°C).",
+      "header": "Skeleton",
+      "icon": "IconRipple"
+    },
+    {
+      "title": "Nettoyage de camions et de flottes",
+      "description": "Un nettoyage en profondeur pour les guerriers de l’hiver ! Notre programme de lavage élimine la saleté avec de l'eau chaude (jusqu'à 85°C) pour une finition étincelante. De plus, il protège du sel et de la crasse hivernale.",
+      "header": "Skeleton",
+      "icon": "IconTruck"
+    },
+    {
+      "title": "Suppression des graffitis",
+      "description": "Les graffitis ternissent l’apparence de votre propriété ? Nous veillons à ce que votre zone soit exempte de vandalisme et assurons un rajeunissement des zones endommagées.",
+      "header": "Skeleton",
+      "icon": "IconSpray"
+    },
+    {
+      "title": "Nettoyage de machinerie lourde",
+      "description": "Des techniques avancées éliminent la crasse, l'huile et la saleté tenaces, garantissant une fonctionnalité optimale et une apparence impeccable. Faites-nous confiance pour rajeunir vos machines.",
+      "header": "Skeleton",
+      "icon": "IconBulldozer"
+    },
+    {
+      "title": "Tampons de benne à ordures",
+      "description": "Améliorez la propreté de votre propriété grâce à notre service de nettoyage de bennes à ordures respectueux de l'environnement. Nous éliminons efficacement la saleté et les odeurs pour un environnement impeccable.",
+      "header": "Skeleton",
+      "icon": "IconTrash"
+    }
+  ]
+}

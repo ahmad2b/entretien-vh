@@ -1,0 +1,58 @@
+{
+  "TermsAndConditions": {
+    "Introduction": {
+      "Title": "Termes et Conditions",
+      "Company": "Entretien Pro",
+      "Description": "Ces Termes et Conditions régissent l'utilisation des services de nettoyage à haute pression fournis par Entretien Pro, y compris le nettoyage de surfaces, le nettoyage de flottes et la suppression de graffitis."
+    },
+    "ServiceUsage": {
+      "Title": "Utilisation des Services",
+      "Description": [
+        "Les services sont fournis conformément aux termes spécifiés et ne doivent pas être utilisés à des fins illégales.",
+        "Les clients sont responsables de s'assurer que toute information fournie à Entretien Pro est exacte et complète."
+      ]
+    },
+    "PaymentAndPricing": {
+      "Title": "Paiement et Tarification",
+      "Description": [
+        "Les prix des services seront ceux indiqués au moment de la réservation.",
+        "Le paiement des services doit être effectué conformément aux termes convenus."
+      ]
+    },
+    "CancellationPolicy": {
+      "Title": "Politique d'Annulation",
+      "Description": [
+        "Les annulations doivent être effectuées dans un délai spécifié avant la date du service pour éviter les frais.",
+        "En cas d'annulation tardive, des frais d'annulation peuvent s'appliquer."
+      ]
+    },
+    "LiabilityLimitations": {
+      "Title": "Limitations de Responsabilité",
+      "Description": [
+        "Entretien Pro n'est pas responsable des pertes indirectes ou consécutives dues à l'utilisation des services.",
+        "La responsabilité pour tout dommage ne dépassera pas le montant payé pour le service."
+      ]
+    },
+    "WarrantyDisclaimer": {
+      "Title": "Avertissement de Garantie",
+      "Description": "Les services sont fournis 'tels quels' sans aucune garantie, expresse ou implicite, dans la mesure maximale permise par la loi applicable."
+    },
+    "IntellectualProperty": {
+      "Title": "Propriété Intellectuelle",
+      "Description": "Tous les droits de propriété intellectuelle liés aux services fournis sont et resteront la propriété de Entretien Pro."
+    },
+    "GoverningLaw": {
+      "Title": "Loi Applicable",
+      "Description": "Ces Termes et Conditions sont régis et interprétés conformément aux lois du Canada."
+    },
+    "AmendmentPolicy": {
+      "Title": "Politique de Modification",
+      "Description": "Entretien Pro se réserve le droit de modifier ces Termes et Conditions à tout moment. L'utilisation continue des services après ces changements signifie l'acceptation de ces modifications."
+    },
+    "ContactInformation": {
+      "Title": "Informations de Contact",
+      "Description": "Pour toute question ou préoccupation concernant ces Termes et Conditions, veuillez nous envoyer un courriel à : entretien@vhpro.ca."
+    },
+    "EffectiveDate": "Date Effective : 13 novembre 2023"
+  }
+}
