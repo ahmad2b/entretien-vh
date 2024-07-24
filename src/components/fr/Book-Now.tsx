@@ -1,30 +1,34 @@
+'use client';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { z } from "zod";
+import { useRouter } from 'next/navigation';
 
 // Define the schema using Zod
 const appointmentSchema = z.object({
-  nom: z.string().min(1, "Le nom est requis"),
-  email: z.string().email("Adresse email invalide"),
-  téléphone: z.string().regex(/^\d{10}$/, "Le téléphone doit comporter 10 chiffres"),
+  name: z.string().min(1, "Le nom est requis"),
+  phone: z.string().regex(/^\d{10}$/, "Le téléphone doit comporter 10 chiffres"),
+  email: z.string().email("Adresse e-mail invalide"),
+  address: z.string().min(1, "L'adresse est requise"),
 });
 
+// Define the types for form data and errors
 type FormData = z.infer<typeof appointmentSchema>;
 type Errors = Partial<Record<keyof FormData, { _errors: string[] }>>;
 
 export default function BookNow() {
   const [formData, setFormData] = useState<FormData>({
-    nom: "",
+    name: "",
+    phone: "",
     email: "",
-    téléphone: "",
+    address: "",
   });
 
   const [errors, setErrors] = useState<Errors>({});
+  const router = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -38,8 +42,8 @@ export default function BookNow() {
       setErrors(errorMessages);
     } else {
       setErrors({});
-      // Handle successful form submission
-      console.log("Données du formulaire valides:", validation.data);
+      console.log("Les données du formulaire sont valides:", validation.data);
+      router.push('/success'); // Navigate to success page
     }
   };
 
@@ -51,63 +55,25 @@ export default function BookNow() {
       </CardHeader>
       <CardContent>
         <form className="grid gap-4" onSubmit={handleSubmit}>
-          <div className="grid grid-cols-2 gap-4">
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="flex-col items-start w-full h-auto">
-                  <span className="font-semibold uppercase text-[0.65rem]">Date</span>
-                  <span className="font-normal">Sélectionnez une date</span>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="p-0 max-w-[276px]">
-                <Calendar />
-              </PopoverContent>
-            </Popover>
-            <Popover>
-              <PopoverTrigger asChild>
-                <Button variant="outline" className="flex-col items-start w-full h-auto">
-                  <span className="font-semibold uppercase text-[0.65rem]">Temps</span>
-                  <span className="font-normal">Sélectionnez une heure</span>
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="p-0 max-w-[276px]">
-                <div className="grid grid-cols-3 gap-2 p-4">
-                  <Button variant="ghost" size="sm">
-                    9:00 AM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    10:00 AM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    11:00 AM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    1:00 PM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    2:00 PM
-                  </Button>
-                  <Button variant="ghost" size="sm">
-                    3:00 PM
-                  </Button>
-                </div>
-              </PopoverContent>
-            </Popover>
+          <div>
+            <Label htmlFor="name">Nom</Label>
+            <Input id="name" placeholder="Entrez votre nom" value={formData.name} onChange={handleChange} />
+            {errors.name && <p className="text-red-500 text-xs py-2">{errors.name._errors[0]}</p>}
           </div>
           <div>
-            <Label htmlFor="nom">Nom</Label>
-            <Input id="nom" placeholder="Entrez votre nom" value={formData.nom} onChange={handleChange} />
-            {errors.nom && <p className="text-red-500">{errors.nom._errors[0]}</p>}
+            <Label htmlFor="phone">Téléphone</Label>
+            <Input id="phone" type="tel" placeholder="Entrez votre numéro de téléphone" value={formData.phone} onChange={handleChange} />
+            {errors.phone && <p className="text-red-500 text-xs py-2">{errors.phone._errors[0]}</p>}
           </div>
           <div>
             <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="Entrer votre Email" value={formData.email} onChange={handleChange} />
-            {errors.email && <p className="text-red-500">{errors.email._errors[0]}</p>}
+            <Input id="email" type="email" placeholder="Entrez votre email" value={formData.email} onChange={handleChange} />
+            {errors.email && <p className="text-red-500 text-xs py-2">{errors.email._errors[0]}</p>}
           </div>
           <div>
-            <Label htmlFor="téléphone">Téléphone</Label>
-            <Input id="téléphone" type="tel" placeholder="Entrez votre numéro de téléphone" value={formData.téléphone} onChange={handleChange} />
-            {errors.téléphone && <p className="text-red-500">{errors.téléphone._errors[0]}</p>}
+            <Label htmlFor="address">Adresse</Label>
+            <Input id="address" placeholder="Entrez votre adresse" value={formData.address} onChange={handleChange} />
+            {errors.address && <p className="text-red-500 text-xs py-2">{errors.address._errors[0]}</p>}
           </div>
           <Button type="submit" className="w-full rounded-full bg-[#065D98] hover:bg-[#56BA40]">
             Prendre rendez-vous
@@ -117,3 +83,4 @@ export default function BookNow() {
     </Card>
   );
 }
+

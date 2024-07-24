@@ -1,11 +1,11 @@
-'use client'
+'use client';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { z } from "zod";
-import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 // Define the schema using Zod
 const appointmentSchema = z.object({
@@ -28,13 +28,12 @@ export default function BookNow() {
   });
 
   const [errors, setErrors] = useState<Errors>({});
+  const router = useRouter();
 
-  // Define the type for the change event
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  // Define the type for the submit event
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validation = appointmentSchema.safeParse(formData);
@@ -43,8 +42,8 @@ export default function BookNow() {
       setErrors(errorMessages);
     } else {
       setErrors({});
-      // Handle successful form submission
       console.log("Form data is valid:", validation.data);
+      router.push('/success'); // Navigate to success page after validation
     }
   };
 
@@ -76,15 +75,11 @@ export default function BookNow() {
             <Input id="address" placeholder="Enter your Address" value={formData.address} onChange={handleChange} />
             {errors.address && <p className="text-red-500 text-xs py-2">{errors.address._errors[0]}</p>}
           </div>
-          <Link href={'/success'}>
           <Button type="submit" className="w-full rounded-full bg-[#065D98] hover:bg-[#56BA40]">
             Book Appointment
           </Button>
-          </Link>
-        
         </form>
       </CardContent>
     </Card>
   );
 }
-
