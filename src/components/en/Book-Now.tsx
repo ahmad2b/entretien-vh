@@ -1,51 +1,25 @@
 'use client';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { useRouter } from 'next/navigation';
 
-// Define the schema using Zod
-const appointmentSchema = z.object({
-  name: z.string().min(1, "Name is required"),
-  phone: z.string().regex(/^\d{10}$/, "Phone must be 10 digits"),
-  email: z.string().email("Invalid email address"),
-  address: z.string().min(1, "Address is required"),
-});
-
-// Define the types for form data and errors
-type FormData = z.infer<typeof appointmentSchema>;
-type Errors = Partial<Record<keyof FormData, { _errors: string[] }>>;
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "../ui/use-toast";
 
 export default function BookNow() {
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    phone: "",
-    email: "",
-    address: "",
-  });
 
-  const [errors, setErrors] = useState<Errors>({});
-  const router = useRouter();
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const validation = appointmentSchema.safeParse(formData);
-    if (!validation.success) {
-      const errorMessages = validation.error.format();
-      setErrors(errorMessages);
-    } else {
-      setErrors({});
-      console.log("Form data is valid:", validation.data);
-      router.push('/success'); // Navigate to success page after validation
-    }
-  };
 
   return (
     <Card className="max-w-md mx-auto">
@@ -54,32 +28,112 @@ export default function BookNow() {
         <CardDescription>Select a date and time to schedule your appointment.</CardDescription>
       </CardHeader>
       <CardContent>
-        <form className="grid gap-4" onSubmit={handleSubmit}>
-          <div>
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="Enter your name" value={formData.name} onChange={handleChange} />
-            {errors.name && <p className="text-red-500 text-xs py-2">{errors.name._errors[0]}</p>}
-          </div>
-          <div>
-            <Label htmlFor="phone">Phone</Label>
-            <Input id="phone" type="tel" placeholder="Enter your phone number" value={formData.phone} onChange={handleChange} />
-            {errors.phone && <p className="text-red-500 text-xs py-2">{errors.phone._errors[0]}</p>}
-          </div>
-          <div>
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" placeholder="Enter your email" value={formData.email} onChange={handleChange} />
-            {errors.email && <p className="text-red-500 text-xs py-2">{errors.email._errors[0]}</p>}
-          </div>
-          <div>
-            <Label htmlFor="address">Address</Label>
-            <Input id="address" placeholder="Enter your Address" value={formData.address} onChange={handleChange} />
-            {errors.address && <p className="text-red-500 text-xs py-2">{errors.address._errors[0]}</p>}
-          </div>
-          <Button type="submit" className="w-full rounded-full bg-[#065D98] hover:bg-[#56BA40]">
-            Book Appointment
-          </Button>
-        </form>
+       <BookNowForm />
       </CardContent>
     </Card>
   );
+}
+
+const FormSchema = z.object({
+  name: z.string().min(2, {
+    message: "Name must be at least 2 characters.",
+  }),
+  phone: z.string().regex(/^\+\d{1,3}\d{10}$/, {
+    message: "Phone number must include country code and be valid.",
+  }),
+  email: z.string().email({
+    message: "Please enter a valid email address.",
+  }),
+  address: z.string().min(5, {
+    message: "Address must be at least 5 characters.",
+  }),
+})
+
+type FormData = z.infer<typeof FormSchema>;
+
+export function BookNowForm() {
+  const form = useForm<FormData>({
+    resolver: zodResolver(FormSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      address: "",
+    },
+  })
+
+  function onSubmit(data: FormData) {
+    console.log(data)
+    toast({
+      title: "Booking Details",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
+    })
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone Number</FormLabel>
+              <FormControl>
+                <Input placeholder="+1234567890" {...field} />
+              </FormControl>
+              <FormDescription>
+                Include your country code. For example, +1 for USA.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input placeholder="you@example.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="address"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Address</FormLabel>
+              <FormControl>
+                <Input placeholder="123 Street Name, City, Country" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" className="w-full">Book Now</Button>
+      </form>
+    </Form>
+  )
 }

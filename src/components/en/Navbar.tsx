@@ -1,6 +1,6 @@
+import { PhoneCall } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { PhoneCall } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -16,28 +16,34 @@ export default function Navbar() {
         <Link
           href="#"
           className="text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white"
-          prefetch={false}
+        >
+          Home
+        </Link>
+        <Link
+          href="#services"
+          className="text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white"
+          
         >
           Services
         </Link>
         <Link
           href="#"
           className="text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white"
-          prefetch={false}
+          
         >
           About
         </Link>
         <Link
           href="#"
           className="text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white"
-          prefetch={false}
+          
         >
           Reviews
         </Link>
         <Link
           href="/book-now"
           className="text-sm font-medium text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white"
-          prefetch={false}
+          
         >
           Contact
         </Link>
@@ -51,9 +57,15 @@ export default function Navbar() {
             French
           </Button>
         </Link>
-        <div className="flex h-7 items-center gap-x-1.5 rounded-full bg-[#065D98] p-4 text-xs text-white hover:bg-[#035186] sm:h-8">
-          <PhoneCall size={14} /> 5142746654
-        </div>
+        <Link href="tel:5142746654" className="flex h-7 items-center rounded-full bg-[#065D98] p-4 text-sm text-white hover:bg-[#035186] sm:h-8">
+        <PhoneCall className="size-4 mr-2" /> 
+        <span>
+
+        5142746654
+        </span>
+
+        </Link>
+        
       </div>
     </div>
   );

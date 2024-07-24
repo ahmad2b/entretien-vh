@@ -1,9 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import { useRouter } from 'next/navigation';
 
 const services = [
   {
@@ -99,7 +98,7 @@ export default function Services() {
   ];
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
+    <section className="w-full py-12 md:py-24 lg:py-32" id="services">
       <div className="container grid gap-8 px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
